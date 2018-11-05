@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -68,6 +69,7 @@ public class WeatherForecastService implements IWeatherForecastService {
 	 * @return the weather api response
 	 */
 	@Override
+	@Cacheable("weather-forecast-api")
 	public String getWeatherApiResponse(String cityParam) {
 		String forecastUrl = String.format(apiForecast, weatherApi);
 		return new RestTemplate().getForObject(forecastUrl, String.class, cityParam, apiKey);
