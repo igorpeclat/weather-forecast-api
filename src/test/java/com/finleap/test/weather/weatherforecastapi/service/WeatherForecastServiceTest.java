@@ -50,7 +50,6 @@ public class WeatherForecastServiceTest {
 		weatherForecastService = mock(WeatherForecastService.class, Answers.RETURNS_DEEP_STUBS);
 		String json = Utils.getFileFromClassLoader(LONDON_JSON_SAMPLE);
 		when(weatherForecastService.getWeatherApiResponse(CITY_PARAM)).thenReturn(json);
-//		when(weatherForecastService.getWeatherForecastByCity(any(String.class))).thenReturn(new ArrayList<WeatherForecastPojo>());
 	}
 
 	/**

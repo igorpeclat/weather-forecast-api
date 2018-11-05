@@ -3,7 +3,6 @@ package com.finleap.test.weather.weatherforecastapi.exception;
 /**
  * The Class TransactionsEmptyException.
  */
-//@ResponseStatus(value = HttpStatus.NOT_FOUND, reason="No transactions")
 public class HttpApiConsumeException extends WeatherForecastException {
 	
 	/** The Constant serialVersionUID. */

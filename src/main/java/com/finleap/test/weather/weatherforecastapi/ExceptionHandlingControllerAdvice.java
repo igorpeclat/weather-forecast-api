@@ -10,6 +10,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import com.finleap.test.weather.weatherforecastapi.exception.WeatherForecastException;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class ExceptionHandlingControllerAdvice.
  */
@@ -28,12 +29,24 @@ public class ExceptionHandlingControllerAdvice {
 		return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).build();
 	}
 	
+	/**
+	 * Http client error exception.
+	 *
+	 * @param ex the ex
+	 * @return the response entity
+	 */
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@ExceptionHandler(value = {HttpClientErrorException.class})
 	public ResponseEntity<?> HttpClientErrorException(final Exception ex) {
 		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 	}
 	
+	/**
+	 * Handle weather forecast exception.
+	 *
+	 * @param ex the ex
+	 * @return the response entity
+	 */
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@ExceptionHandler(value = {WeatherForecastException.class})
 	public ResponseEntity<?> handleWeatherForecastException(final WeatherForecastException ex) {
