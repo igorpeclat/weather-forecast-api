@@ -7,10 +7,9 @@ Java 8+
 ## How-to Build
 
 ### Initialize weather-forecast-api
-
 ```mvn clean install```
 
-### Mysql Database
+### Test
 ```mvn test```
 
 ### How-to Run
