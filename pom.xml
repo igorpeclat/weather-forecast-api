@@ -85,6 +85,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		 <finalName>weather-forecast-api</finalName>
 	</build>
 
 
