@@ -1,0 +1,25 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: weather-backend
+  labels:
+    app: weather-backend
+spec:
+  selector:
+    matchLabels:
+      app: springboot
+      tier: backend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: weather-forecast-api
+        tier: backend
+    spec:
+      containers:
+        - image: gcr.io/devops-terraform-admin-001/weather-forecast-api:v1
+          name: rusty-pangolin
+          ports:
+            - containerPort: 8080
+              name: ci-deploy
